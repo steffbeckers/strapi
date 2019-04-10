@@ -13,7 +13,7 @@ services:
     environment:
       - APP_NAME=strapi-app
       - DATABASE_CLIENT=mongo
-      - DATABASE_HOST=db
+      - DATABASE_HOST=mongodb
       - DATABASE_PORT=27017
       - DATABASE_NAME=strapi
       - DATABASE_USERNAME=
@@ -25,7 +25,7 @@ services:
       - /root/strapi/app:/usr/src/api/strapi-app
     depends_on:
       - db
-  db:
+  mongodb:
     image: mongo
     environment:
       - MONGO_INITDB_DATABASE=strapi
