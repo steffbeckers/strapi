@@ -20,7 +20,7 @@ services:
       - DATABASE_PASSWORD=
       - DATABASE_SSL=false
       - DATABASE_AUTHENTICATION_DATABASE=strapi
-      - HOST=localhost
+      - HOST=strapi.steffbeckers.eu
     volumes:
       - /root/strapi/app:/usr/src/api/strapi-app
     depends_on:
