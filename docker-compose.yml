@@ -24,7 +24,7 @@ services:
     volumes:
       - /root/strapi/app:/usr/src/api/strapi-app
     depends_on:
-      - db
+      - mongodb
   mongodb:
     image: mongo
     environment:
