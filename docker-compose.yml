@@ -9,7 +9,7 @@ services:
       - default
     environment:
       - NODE_ENV=production
-      - APP_NAME=strapi-app
+      - APP_NAME=strapi-api
       - DATABASE_CLIENT=mongo
       - DATABASE_HOST=mongodb
       - DATABASE_PORT=27017
@@ -20,7 +20,7 @@ services:
       - DATABASE_AUTHENTICATION_DATABASE=strapi
       - HOST=strapi.steffbeckers.eu
     volumes:
-      - /root/strapi/app:/usr/src/api/strapi-app
+      - /root/strapi/api:/usr/src/api/strapi-api
     depends_on:
       - mongodb
   mongodb:
