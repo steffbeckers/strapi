@@ -2,10 +2,8 @@ version: "3.7"
 
 services:
   api:
+    build: .
     image: registry.gitlab.com/steffbeckers/strapi
-    networks:
-      - reverse-proxy_default
-      - default
     environment:
       - NODE_ENV=production
       - DATABASE_CLIENT=mongo
@@ -16,7 +14,9 @@ services:
       - DATABASE_PASSWORD=SfqWXWQFJXy55G6VDSaE
       - DATABASE_SSL=false
       - DATABASE_AUTHENTICATION_DATABASE=strapi
-      - HOST=strapi.steffbeckers.eu
+      - HOST=localhost:1337
+    ports:
+      - "1337:1337"
     depends_on:
       - mongodb
   mongodb:
@@ -25,11 +25,10 @@ services:
       - MONGO_INITDB_DATABASE=strapi
       - MONGO_INITDB_ROOT_USERNAME=root
       - MONGO_INITDB_ROOT_PASSWORD=GBt4teCCcZ5QYYkScfMn
-    networks:
-      - default
+    ports:
+      - "27017:27017"
     volumes:
-      - /root/strapi/mongodb:/data/db
-      - /root/strapi/mongodb-init.js:/docker-entrypoint-initdb.d/mongo-init.js:ro
+      - ./mongodb-init.js:/docker-entrypoint-initdb.d/mongo-init.js:ro
   mongodb-express:
     image: mongo-express
     environment:
@@ -38,19 +37,7 @@ services:
       - ME_CONFIG_MONGODB_AUTH_DATABASE=strapi
       - ME_CONFIG_MONGODB_AUTH_USERNAME=strapi
       - ME_CONFIG_MONGODB_AUTH_PASSWORD=SfqWXWQFJXy55G6VDSaE
-    networks:
-      - default
+    ports:
+      - "8081:8081"
     depends_on:
       - mongodb
-  ssh:
-    image: corbinu/ssh-server
-    networks:
-      - default
-    volumes:
-      - /root/.ssh/authorized_keys:/root/.ssh/authorized_keys:ro
-
-networks:
-  reverse-proxy_default:
-    external: true
-  default:
-    internal: true
