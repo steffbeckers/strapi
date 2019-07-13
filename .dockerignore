@@ -3,6 +3,14 @@
 
 .git
 .gitattributes
-.travis.yml
+
+.editorconfig
+.eslintrc
+.eslintignore
+
 README.md
+
 docker-compose.yml
+docker-compose.*.yml
+
+mongodb-init.js
