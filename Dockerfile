@@ -12,11 +12,11 @@ RUN npm install -g strapi@beta
 
 RUN npm install
 
-RUN npm run build
+# RUN npm run build
 
 EXPOSE 1337
 
 HEALTHCHECK --interval=15s --timeout=5s --start-period=30s \
-      CMD node /usr/src/api/healthcheck.js
+      CMD node /app/healthcheck.js
 
 CMD ["./strapi.sh"]

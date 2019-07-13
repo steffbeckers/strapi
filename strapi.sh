@@ -3,13 +3,18 @@ set -ea
 
 _stopStrapi() {
   echo "Stopping strapi"
-  kill -SIGINT "$strapiPID"
+  kill -INT "$strapiPID"
   wait "$strapiPID"
 }
 
-trap _stopStrapi SIGTERM SIGINT
+trap _stopStrapi TERM INT
 
 cd /app
+
+if [ ! -d "node_modules" ]
+then
+    npm install
+fi
 
 strapi start &
 
