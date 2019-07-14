@@ -14,9 +14,11 @@ RUN npm install
 
 RUN NODE_ENV=production npm run build
 
-EXPOSE 1337
-
 # HEALTHCHECK --interval=30s --timeout=10s --start-period=60s \
 #       CMD node /app/healthcheck.js
 
-CMD ["./strapi.sh"]
+# CMD ["./strapi.sh"]
+
+CMD NODE_ENV=production npm start
+
+EXPOSE 1337
