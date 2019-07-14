@@ -4,12 +4,12 @@
     "default": {
       "connector": "strapi-hook-mongoose",
       "settings": {
-        "database": "strapi",
         "host": "127.0.0.1",
-        "srv": false,
         "port": 27017,
+        "database": "strapi",
         "username": "",
-        "password": ""
+        "password": "",
+        "srv": false
       },
       "options": {
         "authenticationDatabase": ""

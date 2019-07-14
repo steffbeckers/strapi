@@ -5,15 +5,13 @@
       "connector": "strapi-hook-mongoose",
       "settings": {
         "host": "mongodb",
-        "port": "27017",
-        "srv": "false",
+        "port": 27017,
         "database": "strapi",
         "username": "strapi",
         "password": "SfqWXWQFJXy55G6VDSaE",
-        "ssl": "false"
+        "srv": false
       },
       "options": {
-        "ssl": "false",
         "authenticationDatabase": "strapi"
       }
     }
