@@ -1,7 +1,7 @@
 {
-  "defaultConnection": "mongodb",
+  "defaultConnection": "default",
   "connections": {
-    "mongodb": {
+    "default": {
       "connector": "strapi-hook-mongoose",
       "settings": {
         "client": "mongo",
