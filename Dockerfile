@@ -8,7 +8,7 @@ COPY package*.json ./
 
 RUN npm install
 
-# RUN npm install -g strapi@beta
+RUN npm install -g strapi@beta
 
 RUN npm rebuild node-sass
 
