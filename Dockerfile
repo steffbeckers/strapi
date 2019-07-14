@@ -16,8 +16,8 @@ COPY . .
 
 RUN NODE_ENV=production npm run build
 
-# HEALTHCHECK --interval=30s --timeout=10s --start-period=60s \
-#       CMD node /app/healthcheck.js
+HEALTHCHECK --interval=30s --timeout=10s --start-period=60s \
+  CMD node /app/healthcheck.js
 
 RUN chmod +x ./strapi.sh
 
