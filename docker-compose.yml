@@ -6,7 +6,7 @@ services:
     image: registry.gitlab.com/steffbeckers/strapi
     environment:
       - NODE_ENV=production
-      - HOST=strapi.steffbeckers.eu
+      # - HOST=strapi.steffbeckers.eu
     networks:
       # - reverse-proxy_default
       - default
@@ -21,16 +21,16 @@ services:
       - /root/strapi/mongodb-init.js:/docker-entrypoint-initdb.d/mongo-init.js:ro
     networks:
       - default
-  mongodb-express:
-    image: mongo-express
-    environment:
-      - ME_CONFIG_MONGODB_SERVER=mongodb
-      - ME_CONFIG_MONGODB_ENABLE_ADMIN=false
-      - ME_CONFIG_MONGODB_AUTH_DATABASE=strapi
-      - ME_CONFIG_MONGODB_AUTH_USERNAME=strapi
-      - ME_CONFIG_MONGODB_AUTH_PASSWORD=SfqWXWQFJXy55G6VDSaE
-    networks:
-      - default
+  # mongodb-express:
+  #   image: mongo-express
+  #   environment:
+  #     - ME_CONFIG_MONGODB_SERVER=mongodb
+  #     - ME_CONFIG_MONGODB_ENABLE_ADMIN=false
+  #     - ME_CONFIG_MONGODB_AUTH_DATABASE=strapi
+  #     - ME_CONFIG_MONGODB_AUTH_USERNAME=strapi
+  #     - ME_CONFIG_MONGODB_AUTH_PASSWORD=SfqWXWQFJXy55G6VDSaE
+  #   networks:
+  #     - default
   ssh:
     image: corbinu/ssh-server
     volumes:
