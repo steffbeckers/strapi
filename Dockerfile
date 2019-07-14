@@ -1,4 +1,4 @@
-FROM node:lts
+FROM node
 
 RUN echo "unsafe-perm = true" >> ~/.npmrc
 
