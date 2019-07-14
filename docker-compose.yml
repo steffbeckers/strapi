@@ -6,9 +6,9 @@ services:
     image: registry.gitlab.com/steffbeckers/strapi
     environment:
       - NODE_ENV=production
-      # - HOST=strapi.steffbeckers.eu
+      - HOST=strapi.steffbeckers.eu
     networks:
-      # - reverse-proxy_default
+      - reverse-proxy_default
       - default
   mongodb:
     image: mongo
@@ -39,7 +39,7 @@ services:
       - default
 
 networks:
-  # reverse-proxy_default:
-  #   external: true
+  reverse-proxy_default:
+    external: true
   default:
     internal: true
