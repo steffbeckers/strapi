@@ -9,8 +9,6 @@ services:
       - HOST=localhost:1337
     ports:
       - "1337:1337"
-    depends_on:
-      - mongodb
   mongodb:
     image: mongo
     environment:
@@ -31,5 +29,3 @@ services:
       - ME_CONFIG_MONGODB_AUTH_PASSWORD=SfqWXWQFJXy55G6VDSaE
     ports:
       - "8081:8081"
-    depends_on:
-      - mongodb

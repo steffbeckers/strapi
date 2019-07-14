@@ -10,8 +10,6 @@ services:
     networks:
       # - reverse-proxy_default
       - default
-    depends_on:
-      - mongodb
   mongodb:
     image: mongo
     environment:
@@ -33,8 +31,6 @@ services:
       - ME_CONFIG_MONGODB_AUTH_PASSWORD=SfqWXWQFJXy55G6VDSaE
     networks:
       - default
-    depends_on:
-      - mongodb
   ssh:
     image: corbinu/ssh-server
     volumes:
