@@ -14,5 +14,3 @@ docker-compose.yml
 docker-compose.*.yml
 
 mongodb-init.js
-
-.cache
