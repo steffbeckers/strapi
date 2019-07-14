@@ -9,7 +9,8 @@
         "database": "strapi",
         "username": "strapi",
         "password": "SfqWXWQFJXy55G6VDSaE",
-        "srv": false
+        "srv": false,
+        "ssl": false
       },
       "options": {
         "authenticationDatabase": "strapi"

@@ -3,20 +3,13 @@ version: "3.7"
 services:
   api:
     image: registry.gitlab.com/steffbeckers/strapi
-    networks:
-      - reverse-proxy_default
-      - default
     environment:
       - NODE_ENV=production
       - DATABASE_CLIENT=mongo
-      - DATABASE_HOST=mongodb
-      - DATABASE_PORT=27017
-      - DATABASE_NAME=strapi
-      - DATABASE_USERNAME=strapi
-      - DATABASE_PASSWORD=SfqWXWQFJXy55G6VDSaE
-      - DATABASE_SSL=false
-      - DATABASE_AUTHENTICATION_DATABASE=strapi
       - HOST=strapi.steffbeckers.eu
+    networks:
+      - reverse-proxy_default
+      - default
     depends_on:
       - mongodb
   mongodb:
@@ -25,11 +18,11 @@ services:
       - MONGO_INITDB_DATABASE=strapi
       - MONGO_INITDB_ROOT_USERNAME=root
       - MONGO_INITDB_ROOT_PASSWORD=GBt4teCCcZ5QYYkScfMn
-    networks:
-      - default
     volumes:
       - /root/strapi/mongodb:/data/db
       - /root/strapi/mongodb-init.js:/docker-entrypoint-initdb.d/mongo-init.js:ro
+    networks:
+      - default
   mongodb-express:
     image: mongo-express
     environment:
@@ -44,10 +37,10 @@ services:
       - mongodb
   ssh:
     image: corbinu/ssh-server
-    networks:
-      - default
     volumes:
       - /root/.ssh/authorized_keys:/root/.ssh/authorized_keys:ro
+    networks:
+      - default
 
 networks:
   reverse-proxy_default:
