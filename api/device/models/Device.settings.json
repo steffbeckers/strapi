@@ -1,0 +1,23 @@
+{
+  "connection": "default",
+  "collectionName": "device",
+  "info": {
+    "name": "device",
+    "description": ""
+  },
+  "options": {
+    "timestamps": [
+      "createdAt",
+      "updatedAt"
+    ]
+  },
+  "attributes": {
+    "name": {
+      "required": true,
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    }
+  }
+}
