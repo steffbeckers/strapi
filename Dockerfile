@@ -20,7 +20,7 @@ RUN NODE_ENV=production npm run build
 # CMD ["./strapi.sh"]
 
 # Test
-RUN ls
+RUN ls -alR
 
 CMD NODE_ENV=production strapi start
 
