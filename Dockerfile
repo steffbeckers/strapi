@@ -19,13 +19,8 @@ RUN NODE_ENV=production npm run build
 # HEALTHCHECK --interval=30s --timeout=10s --start-period=60s \
 #       CMD node /app/healthcheck.js
 
-#RUN chmod +x ./strapi.sh
+RUN chmod +x ./strapi.sh
 
-# CMD ["./strapi.sh"]
-
-# Test
-RUN ls -alR
-
-CMD NODE_ENV=production strapi start
+CMD ["./strapi.sh"]
 
 EXPOSE 1337
