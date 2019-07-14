@@ -19,6 +19,6 @@ RUN NODE_ENV=production npm run build
 
 # CMD ["./strapi.sh"]
 
-CMD NODE_ENV=production npm start
+CMD NODE_ENV=production strapi start
 
 EXPOSE 1337
