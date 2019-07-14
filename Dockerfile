@@ -12,7 +12,7 @@ RUN npm install -g strapi@beta
 
 RUN npm install
 
-# RUN NODE_ENV=production npm run build
+RUN NODE_ENV=production npm run build
 
 EXPOSE 1337
 

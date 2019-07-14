@@ -13,7 +13,7 @@ cd /app
 
 if [ ! -d "node_modules" ]
 then
-    npm install
+  npm install
 fi
 
 strapi start &
