@@ -10,6 +10,8 @@ services:
     networks:
       - reverse-proxy_default
       - default
+    depends_on:
+      - mongodb
   mongodb:
     image: mongo
     environment:
@@ -19,22 +21,6 @@ services:
     volumes:
       - /root/strapi/mongodb:/data/db
       - /root/strapi/mongodb-init.js:/docker-entrypoint-initdb.d/mongo-init.js:ro
-    networks:
-      - default
-  # mongodb-express:
-  #   image: mongo-express
-  #   environment:
-  #     - ME_CONFIG_MONGODB_SERVER=mongodb
-  #     - ME_CONFIG_MONGODB_ENABLE_ADMIN=false
-  #     - ME_CONFIG_MONGODB_AUTH_DATABASE=strapi
-  #     - ME_CONFIG_MONGODB_AUTH_USERNAME=strapi
-  #     - ME_CONFIG_MONGODB_AUTH_PASSWORD=SfqWXWQFJXy55G6VDSaE
-  #   networks:
-  #     - default
-  ssh:
-    image: corbinu/ssh-server
-    volumes:
-      - /root/.ssh/authorized_keys:/root/.ssh/authorized_keys:ro
     networks:
       - default
 

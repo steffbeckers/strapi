@@ -9,6 +9,8 @@ services:
       - HOST=localhost:1337
     ports:
       - "1337:1337"
+    depends_on:
+      - mongodb
   mongodb:
     image: mongo
     environment:
@@ -19,13 +21,3 @@ services:
       - "27017:27017"
     volumes:
       - ./mongodb-init.js:/docker-entrypoint-initdb.d/mongo-init.js:ro
-  mongodb-express:
-    image: mongo-express
-    environment:
-      - ME_CONFIG_MONGODB_SERVER=mongodb
-      - ME_CONFIG_MONGODB_ENABLE_ADMIN=false
-      - ME_CONFIG_MONGODB_AUTH_DATABASE=strapi
-      - ME_CONFIG_MONGODB_AUTH_USERNAME=strapi
-      - ME_CONFIG_MONGODB_AUTH_PASSWORD=SfqWXWQFJXy55G6VDSaE
-    ports:
-      - "8081:8081"
