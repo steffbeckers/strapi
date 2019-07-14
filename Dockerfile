@@ -14,7 +14,7 @@ RUN npm rebuild node-sass
 
 COPY . .
 
-RUN NODE_ENV=production npm run build
+RUN NODE_ENV=development npm run build
 
 HEALTHCHECK --interval=30s --timeout=10s --start-period=60s \
   CMD node /app/healthcheck.js

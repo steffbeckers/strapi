@@ -5,7 +5,7 @@ services:
     build: . # Only for now, delete this when building with gitlab's CI/CD
     image: registry.gitlab.com/steffbeckers/strapi
     environment:
-      - NODE_ENV=production
+      - NODE_ENV=development
       - HOST=strapi.steffbeckers.eu
     depends_on:
       - mongodb

@@ -11,7 +11,7 @@ trap _stopStrapi TERM INT
 
 cd /app
 
-strapi start &
+strapi develop &
 
 strapiPID=$!
 wait "$strapiPID"

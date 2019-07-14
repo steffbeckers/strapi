@@ -5,7 +5,7 @@ services:
     build: .
     image: registry.gitlab.com/steffbeckers/strapi
     environment:
-      - NODE_ENV=production
+      - NODE_ENV=development
       - HOST=localhost:1337
     ports:
       - "1337:1337"
