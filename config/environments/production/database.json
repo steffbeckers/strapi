@@ -14,7 +14,8 @@
         "ssl": false
       },
       "options": {
-        "authenticationDatabase": "strapi"
+        "authenticationDatabase": "strapi",
+        "debug": true
       }
     }
   }
