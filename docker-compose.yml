@@ -5,7 +5,6 @@ services:
     image: registry.gitlab.com/steffbeckers/strapi
     environment:
       - NODE_ENV=production
-      - DATABASE_CLIENT=mongo
       - HOST=strapi.steffbeckers.eu
     networks:
       - reverse-proxy_default
