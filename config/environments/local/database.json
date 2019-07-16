@@ -5,8 +5,8 @@
       "connector": "strapi-hook-mongoose",
       "settings": {
         "client": "mongo",
-        "host": "localhost",
-        "port": 27017,
+        "host": "dev.steffbeckers.eu",
+        "port": 27018,
         "database": "strapi",
         "username": "strapi",
         "password": "SfqWXWQFJXy55G6VDSaE",

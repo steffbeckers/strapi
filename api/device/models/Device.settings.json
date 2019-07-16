@@ -18,6 +18,19 @@
     },
     "description": {
       "type": "text"
+    },
+    "type": {
+      "enum": [
+        "Laptop",
+        "Desktop",
+        "Phone"
+      ],
+      "type": "enumeration"
+    },
+    "user": {
+      "model": "user",
+      "via": "devices",
+      "plugin": "users-permissions"
     }
   }
 }
