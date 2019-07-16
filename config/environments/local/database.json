@@ -8,13 +8,13 @@
         "host": "localhost",
         "port": 27017,
         "database": "strapi",
-        "username": "",
-        "password": "",
+        "username": "strapi",
+        "password": "SfqWXWQFJXy55G6VDSaE",
         "srv": false,
         "ssl": false
       },
       "options": {
-        "authenticationDatabase": "",
+        "authenticationDatabase": "strapi",
         "debug": true
       }
     }
