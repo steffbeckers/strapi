@@ -9,7 +9,6 @@ services:
       - HOST=strapi.steffbeckers.eu
     networks:
       - reverse-proxy_default
-      - default
     depends_on:
       - mongodb
   mongodb:
@@ -20,8 +19,6 @@ services:
       - MONGO_INITDB_ROOT_PASSWORD=GBt4teCCcZ5QYYkScfMn
     ports:
       - "27018:27017"
-    networks:
-      - default
     volumes:
       - /root/strapi/mongodb:/data/db
       - /root/strapi/mongodb-init.js:/docker-entrypoint-initdb.d/mongo-init.js:ro
@@ -29,5 +26,3 @@ services:
 networks:
   reverse-proxy_default:
     external: true
-  default:
-    internal: true
