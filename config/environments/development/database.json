@@ -9,7 +9,7 @@
         "port": 27017,
         "database": "strapi",
         "username": "strapi",
-        "password": "SfqWXWQFJXy55G6VDSaE",
+        "password": "SECRET",
         "srv": false,
         "ssl": false
       },

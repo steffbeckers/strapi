@@ -14,7 +14,7 @@ services:
     environment:
       - MONGO_INITDB_DATABASE=strapi
       - MONGO_INITDB_ROOT_USERNAME=root
-      - MONGO_INITDB_ROOT_PASSWORD=GBt4teCCcZ5QYYkScfMn
+      - MONGO_INITDB_ROOT_PASSWORD=SECRET
     ports:
       - "27018:27017"
     volumes:
